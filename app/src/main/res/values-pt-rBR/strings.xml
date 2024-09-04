@@ -9,6 +9,7 @@
     <string name="kernel_name">Nome do kernel</string>
     <string name="kernel_version">Versão do kernel</string>
     <string name="slot_suffix">Sufixo de slot</string>
+    <string name="slot">Slot</string>
     <string name="slot_a">Slot A</string>
     <string name="slot_b">Slot B</string>
     <string name="boot_sha1">Boot SHA1</string>
