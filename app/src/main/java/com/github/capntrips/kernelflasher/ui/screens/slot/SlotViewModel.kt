@@ -116,13 +116,7 @@ class SlotViewModel(
             }
         }
 
-        if (ramdisk.exists()) {
-            when (Shell.cmd("$magiskboot cpio ramdisk.cpio test").exec().code) {
-                0 -> _sha1 = Shell.cmd("$magiskboot sha1 $boot").exec().out.firstOrNull()
-                1 -> _sha1 = Shell.cmd("$magiskboot cpio ramdisk.cpio sha1").exec().out.firstOrNull()
-                else -> log(context, "Invalid ramdisk in boot.img", shouldThrow = false)
-            }
-        } else if (kernel.exists()) {
+        if (kernel.exists()) {
             _sha1 = Shell.cmd("$magiskboot sha1 $boot").exec().out.firstOrNull()
         } else {
             log(context, "Invalid boot.img, no ramdisk or kernel found", shouldThrow = true)
